@@ -3,35 +3,58 @@
 # Author: Zachary Sanford (@zachsanford)
 # Published Dec 20th, 2017
 
-print("**************** BMI Calculator ****************\n")
-print("Hello, let's figure out your Body Mass Index!\n")
-lbs = int(input("Please enter your weight in pounds (lbs) >> "))
-inches = int(input("\nPlease enter your height in inches >> "))
+import os
+os.system('clear')
+CONTINUE = True
 
-def poundsToKilos(var):
-	kilos = var * 0.45359237
-	return kilos
+while CONTINUE:
+	print("**************** BMI Calculator ****************\n")
+	print("Hello, let's figure out your Body Mass Index!\n")
+	lbs = int(input("Please enter your weight in pounds (lbs) >> "))
+	inches = int(input("\nPlease enter your height in inches >> "))
 
-kg = poundsToKilos(lbs)
+	def poundsToKilos(var):
+		kilos = var * 0.45359237
+		return kilos
 
-def inchesToMeters(x):
-	meters = x * 0.0254
-	return meters
+	kg = poundsToKilos(lbs)
 
-m = inchesToMeters(inches)
+	def inchesToMeters(x):
+		meters = x * 0.0254
+		return meters
 
-def bodyMassIndex(weight,height):
-	y = weight / (height ** 2)
-	return y
+	m = inchesToMeters(inches)
 
-bmi = bodyMassIndex(kg,m)
+	def bodyMassIndex(weight,height):
+		y = weight / (height ** 2)
+		return y
 
-print("\nYour BMI is",bmi)
-if bmi >= 30:
-	print("\nYour BMI Category is OBESITY.")
-elif bmi >= 25:
-	print("\nYour BMI Category is OVERWEIGHT.")
-elif bmi >= 18.5:
-	print("\nYour BMI Category is NORMAL WEIGHT.")
-else:
-	print("\nYour BMI Category is UNDERWEIGHT.")
+	bmi = bodyMassIndex(kg,m)
+
+	print("\nYour BMI is",bmi)
+	if bmi >= 30:
+		print("\nYour BMI Category is OBESITY.")
+	elif bmi >= 25:
+		print("\nYour BMI Category is OVERWEIGHT.")
+	elif bmi >= 18.5:
+		print("\nYour BMI Category is NORMAL WEIGHT.")
+	else:
+		print("\nYour BMI Category is UNDERWEIGHT.")
+	
+	userAnswer = input("\nWould you like to try again? (Y/N) >> ")
+	if userAnswer == "Y":
+		CONTINUE = True
+		os.system('clear')
+	elif userAnswer == "y":
+		CONTINUE = True
+		os.system('clear')
+	elif userAnswer == "N":
+		CONTINUE = False
+		os.system('clear')
+		input("Goodbye!\n\nPress any key to quit...")
+		os.system('clear')
+	elif userAnswer == "n":
+		CONTINUE = False
+		os.system('clear')
+		input("Goodbye!\n\nPress any key to quit...")
+		os.system('clear')
