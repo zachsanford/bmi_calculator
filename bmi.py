@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+# Author: Zachary Sanford (@zachsanford)
+# Published Dec 20th, 2017
+
 print("**************** BMI Calculator ****************\n")
 print("Hello, let's figure out your Body Mass Index!\n")
 lbs = int(input("Please enter your weight in pounds (lbs) >> "))
