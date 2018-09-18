@@ -9,4 +9,4 @@ To run the program use the
 "./bmi_calculator.py" command.
 
 -Zach Sanford
-(@zachsanford) YE
+(@zachsanford)
